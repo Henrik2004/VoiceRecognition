@@ -41,7 +41,7 @@ def light():
 
 def yt():
     if text == "YouTube":
-        webbrowser.open("https://www.youtube.com/?gl=DE")
+        webbrowser.open("https://www.youtube.com")
         yot = "opened youtube"
         tts = gTTS(yot)
         if os.path.exists(r"path"):

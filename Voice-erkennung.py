@@ -8,14 +8,15 @@ import webbrowser
 r = sr.Recognizer()
 
 
-def erkennung():
+def recognition():
     global text, audio
     with sr.Microphone() as source:
         print("Listening...")
-        
+
         audio = r.listen(source)
         text = r.recognize_google(audio, language="en_US")
         print(text)
+
 
 def music():
     if text == "play music":
@@ -26,7 +27,7 @@ def music():
         filename = r"path"
         tts = tts.save(filename)
         playsound.playsound(filename)
-        
+
 
 def light():
     if text == "turn the lights on":
@@ -39,6 +40,7 @@ def light():
         tts = tts.save(filename)
         playsound.playsound(filename)
 
+
 def yt():
     if text == "YouTube":
         webbrowser.open("https://www.youtube.com")
@@ -49,6 +51,7 @@ def yt():
         filename = r"path"
         tts = tts.save(filename)
         playsound.playsound(filename)
+
 
 def google():
     if text == "Google":
@@ -61,8 +64,9 @@ def google():
         tts = tts.save(filename)
         playsound.playsound(filename)
 
+
 while True:
-    erkennung()
+    recognition()
     music()
     light()
     yt()
